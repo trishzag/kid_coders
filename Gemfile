@@ -15,6 +15,7 @@ gem 'selenium-webdriver'
 gem 'dotenv-rails'
 gem 'fog'
 gem 'kaminari'
+gem 'rails-html-sanitizer', '>= 1.0.1'
 
 group :development, :test do
   gem 'database_cleaner'
