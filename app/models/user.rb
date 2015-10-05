@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, length: { maximum: 15 }
   validates :username, uniqueness: true, case_sensitive: false
   validates :email, uniqueness: true
-  validates :password, presence: true, length: { minimum: 8, maximu: 15 }
+  validates_length_of :password, in: 8..15, allow_blank: false
   validate :validate_username
 
   def validate_username
