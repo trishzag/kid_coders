@@ -4,8 +4,8 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
-  # by default. You can change it below and use your own secret key.
+  # Devise will use the `secret_key_base` on Rails 4+ applications as its
+  # `secret_key`by default. You can change it below and use your own secret key.
   config.secret_key = '53e3dd2467ed0410e1a296204cc32cbe8eb62ab666a66defd3b5e148b14b86c2470303665a3ab7d0dc3ca04aec1f1533376e79654e814f06e318631867edb836'
 
   # ==> Mailer Configuration
@@ -28,16 +28,17 @@ Devise.setup do |config|
   # just :email. You can configure it to use [:username, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those
   # parameters are used only when authenticating and not when retrieving from
-  # session. If you need permissions, you should implement that in a before filter.
-  # You can also supply a hash where the value is a boolean determining whether
-  # or not authentication should be aborted when the value is not present.
+  # session. If you need permissions, you should implement that in a before
+  # filter. You can also supply a hash where the value is a boolean determining
+  # whether or not authentication should be aborted when the value is not present.
   config.authentication_keys = [:login]
 
-  # Configure parameters from the request object used for authentication. Each entry
-  # given should be a request method and it will automatically be passed to the
-  # find_for_authentication method and considered in your model lookup. For instance,
-  # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
-  # The same considerations mentioned for authentication_keys also apply to request_keys.
+  # Configure parameters from the request object used for authentication. Each
+  # entry given should be a request method and it will automatically be passed to
+  # the find_for_authentication method and considered in your model lookup. For
+  # instance, if you set :request_keys to [:subdomain], :subdomain will be used
+  # on authentication. The same considerations mentioned for authentication_keys
+  # also apply to request_keys.
   config.request_keys = [:login]
 
   # Configure which authentication keys should be case-insensitive.
@@ -45,22 +46,22 @@ Devise.setup do |config|
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [:email]
 
-  # Configure which authentication keys should have whitespace stripped.
-  # These keys will have whitespace before and after removed upon creating or
-  # modifying a user and when used to authenticate or find a user. Default is :email.
+  # Configure which authentication keys should have whitespace stripped. These
+  # keys will have whitespace before and after removed upon creating or modifying
+  # a user and when used to authenticate or find a user. Default is :email.
   config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
-  # It can be set to an array that will enable params authentication only for the
-  # given strategies, for example, `config.params_authenticatable = [:database]` will
-  # enable it only for database (email + password) authentication.
+  # It can be set to an array that will enable params authentication only for
+  # the given strategies, for example, `config.params_authenticatable=[:database]`
+  # will enable it only for database (email + password) authentication.
   config.params_authenticatable = true
 
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
-  # given strategies, for example, `config.http_authenticatable = [:database]` will
-  # enable it only for database authentication. The supported strategies are:
-  # :database      = Support basic authentication with authentication key + password
+  # given strategies, for example, `config.http_authenticatable = [:database]`
+  # will enable it only for database authentication. The supported strategies are:
+  # :database = Support basic authentication with authentication key + password
   config.http_authenticatable = false
 
   # If 401 status code should be returned for AJAX requests. True by default.
@@ -124,7 +125,7 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
-  config.confirmation_keys = [ :username ]
+  config.confirmation_keys = [:username]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
@@ -183,7 +184,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  config.reset_password_keys = [ :username ]
+  config.reset_password_keys = [:username]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
