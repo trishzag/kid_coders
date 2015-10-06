@@ -1,6 +1,6 @@
 # kid_coders
 
-![Kid Coders Logo](.png)
+![Kid Coders Logo](kidcoders.png)
 
 # Introduction
 
