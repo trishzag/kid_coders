@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="/duck_favicon.gif" />
-  <title>Kid Coders</title>
+  <title>Kids Who code</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Miltonian+Tattoo' rel='stylesheet' type='text/css'>
   <%- flash.each do |key, value| -%>
@@ -19,6 +21,7 @@
   <section class="main">
     <%= yield %>
   </section>
+  <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
 <script>
   function sideNav() {
