@@ -12,8 +12,8 @@ before_filter :configure_account_update_params, only: [:update]
 
   def configure_account_update_params
     devise_parameter_sanitizer.for(:account_update) << :username
-    devise_parameter_sanitizer.for(:sign_up) << :first_name
-    devise_parameter_sanitizer.for(:sign_up) << :last_name
+    devise_parameter_sanitizer.for(:account_update) << :first_name
+    devise_parameter_sanitizer.for(:account_update) << :last_name
   end
 
   def after_sign_up_path_for(resource)
