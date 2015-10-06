@@ -19,6 +19,7 @@ public/uploads
 # Ignore secret codes
 /config/secrets.yml
 .codeclimate.yml
+.coveralls.yml
 
 # Ignore environment
 .env
