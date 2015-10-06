@@ -1,10 +1,10 @@
-# kid_coders
+# Kids Who Code
 
-![Kid Coders Logo](kidcoders.png)
+![Kids Who Code Logo](kidcoders.png)
 
 # Introduction
 
-Kid Coders is a learn-to-code website hosted at https://.  The application was designed and built as a "breakable toy" team during the Fall 2015 cohort at Launch Academy (http://www.launchacademy.com/).
+Kids Who Code is a learn-to-code application hosted at https://kidswhocode.herokuapp.com.  The application was designed and built as a "breakable toy" during the Fall 2015 cohort at Launch Academy (http://www.launchacademy.com/).
 
 ![Build Status](https://codeship.com/projects/278d46e0-4d07-0133-9ee6-6e1cce453881/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/trishzag/kid_coders.png) ![Coverage Status](https://coveralls.io/repos/trishzag/kid_coders/badge.png)
