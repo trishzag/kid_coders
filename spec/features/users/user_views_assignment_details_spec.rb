@@ -8,4 +8,3 @@
 # [ ] I must see all content for the assignment on the assignment detail page
 # [ ] I must see a link to the assignment detail from my user account page and
 # from the assignment index page
-# [ ] I must be able to access the question queue from the assignment detail page
