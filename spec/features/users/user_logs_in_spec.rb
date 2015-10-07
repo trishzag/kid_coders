@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user registers', %{
+feature 'user logs in', %{
 As a User
 I want to log in
 So that I have access to the entire site
