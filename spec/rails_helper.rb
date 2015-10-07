@@ -35,13 +35,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
-end
-
 class ActiveRecord::Base
   mattr_accessor :shared_connection
   @@shared_connection = nil
