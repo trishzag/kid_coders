@@ -43,4 +43,9 @@ FactoryGirl.define do
     sequence(:source) { |n| "Source#{n}" }
     sequence(:assignment_id)
   end
+
+  factory :userplan do
+    sequence(:user_id)
+    sequence(:curriculum_id)
+  end
 end
