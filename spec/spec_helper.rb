@@ -1,5 +1,6 @@
 require 'coveralls'
 require 'support/login_helper'
+require 'support/registration_helper'
 Coveralls.wear!('rails')
 
 RSpec.configure do |config|
@@ -11,6 +12,7 @@ RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
     config.include LoginHelper
+    config.include RegistrationHelper
   end
 
   config.mock_with :rspec do |mocks|
