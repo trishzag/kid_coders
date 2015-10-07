@@ -23,6 +23,10 @@ public/uploads
 
 # Ignore environment
 .env
+<<<<<<< Updated upstream
 config/secrets.yml
 .coveralls.yml
 codeclimate.yml
+=======
+public/uploads
+>>>>>>> Stashed changes
