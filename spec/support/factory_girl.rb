@@ -9,4 +9,13 @@ FactoryGirl.define do
     sequence(:password) { |n| "password#{n}" }
     password_confirmation :password
   end
+
+  factory :assignment do
+    sequence(:title) { |n| "title#{n}" }
+    sequence(:curriculum_id)
+  end
+
+  factory :curriculum do
+    sequence(:name) { |n| "Curriculum name#{n}" }
+  end
 end

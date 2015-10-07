@@ -14,3 +14,7 @@
 
 #Ignore
 /coverage
+.codeclimate.yml
+.coveralls.yml
+/config/secrets.yml
+.env
