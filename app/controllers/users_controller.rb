@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     @users = User.all.page params[:page]
   end
 
+  def created
+    @user = User.new
+
   def show
     @user = User.find(params[:id])
   end
