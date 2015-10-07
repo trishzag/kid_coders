@@ -3,7 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable
-  belongs_to :user
+  belongs_to :group
+  has_many :grades
+  has_many :userplans
+  has_many :curricula
+  has_many :assignments, through: :curricula
   validates :username, presence: true, length: { maximum: 15 }
   validates :username, uniqueness: true, case_sensitive: false
   validates :first_name, presence: true, length: { maximum: 20 }

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user registers', %Q{
+feature 'user registers', %{
   As a User
   I want to create an account
   So that I have access to the site

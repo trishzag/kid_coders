@@ -27,7 +27,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'cucumber'
   gem 'guard-jasmine'
-  gem 'shoulda-matchers', '~> 3.0'
+  gem 'shoulda-matchers', '~> 2.8.0'
 end
 
 group :development do
