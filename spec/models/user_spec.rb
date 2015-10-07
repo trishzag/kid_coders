@@ -32,4 +32,8 @@ RSpec.describe User, type: :model do
 
   it { should have_valid(:email).when("casey@inkedgirl.com") }
   it { should_not have_valid(:email).when(nil, "") }
+
+  it { should have_valid(:group_id).when(8) }
+  it { should_not have_valid(:group_id).when("Maria Cruz") }
+  it { should_not have_valid(:group_id).when(nil, "") }
 end

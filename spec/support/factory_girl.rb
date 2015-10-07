@@ -18,4 +18,28 @@ FactoryGirl.define do
   factory :curriculum do
     sequence(:name) { |n| "Curriculum name#{n}" }
   end
+
+  factory :grade do
+    sequence(:name) { "Pass" || "Requires Work" }
+    sequence(:user_id)
+    sequence(:assignment_id)
+  end
+
+  factory :group do
+    sequence(:name) { |n| "Group name#{n}" }
+  end
+
+  factory :content do
+    sequence(:title) { |n| "Title#{n}" }
+    sequence(:description) { |n| "Description#{n}" }
+    sequence(:source) { |n| "Source#{n}" }
+    sequence(:assignment_id)
+  end
+
+  factory :resource do
+    sequence(:title) { |n| "Title#{n}" }
+    sequence(:description) { |n| "Description#{n}" }
+    sequence(:source) { |n| "Source#{n}" }
+    sequence(:assignment_id)
+  end
 end
