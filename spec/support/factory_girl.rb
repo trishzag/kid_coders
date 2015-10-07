@@ -8,6 +8,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "user_email#{n}@example.com" }
     sequence(:password) { |n| "password#{n}" }
     password_confirmation :password
+    sequence(:group_id)
   end
 
   factory :assignment do
