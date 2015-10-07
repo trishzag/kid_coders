@@ -12,16 +12,11 @@
 !/log/.keep
 /tmp
 
-# Ignore coverage and public files
+#Ignore
 /coverage
-public/uploads
-
-# Ignore secret codes
-/config/secrets.yml
 .codeclimate.yml
 .coveralls.yml
-
-# Ignore environment
+/config/secrets.yml
 .env
 config/secrets.yml
 .coveralls.yml
