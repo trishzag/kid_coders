@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable
   attr_accessor :login
-
   belongs_to :group
   has_many :grades
   has_many :userplans
@@ -19,7 +18,7 @@ class User < ActiveRecord::Base
   validate :validate_username
 
   def email_required?
-  false
+    false
   end
 
   def email_changed?
@@ -34,16 +33,16 @@ class User < ActiveRecord::Base
     @login || self.username || self.email
   end
 
-protected
+  protected
 
-def self.find_for_database_authentication(warden_conditions)
-  conditions = warden_conditions.dup
-  if login = conditions.delete(:login)
-    where(conditions.to_hash).where(["lower(user_name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
-  else
-    where(conditions.to_hash).first
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions.to_hash).where(["lower(user_name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions.to_hash).first
+    end
   end
-end
 
   def validate_username
     if User.where(email: username).exists?
