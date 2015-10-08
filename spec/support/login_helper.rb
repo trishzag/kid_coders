@@ -1,5 +1,4 @@
 module LoginHelper
-
   def login_with_email(user)
     visit new_user_session_path
 
