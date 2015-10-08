@@ -31,5 +31,5 @@ RSpec.describe User, type: :model do
   it { should_not have_valid(:password).when(nil, "break", "98375P") }
 
   it { should have_valid(:email).when("casey@inkedgirl.com") }
-  it { should_not have_valid(:email).when(nil, "") }
+  it { should have_valid(:email).when(nil, "") }
 end
