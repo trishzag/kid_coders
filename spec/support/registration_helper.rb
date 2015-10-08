@@ -6,7 +6,7 @@ module RegistrationHelper
     fill_in 'First name', with: "Jane"
     fill_in 'Last name', with: "Doe"
     fill_in 'Username', with: "janedoe"
-    fill_in 'Email', with: "janedoe@example.com"
+    fill_in 'Email', with: "jd@example.com"
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
 
@@ -19,7 +19,7 @@ module RegistrationHelper
     fill_in 'First name', with: "Jane"
     fill_in 'Last name', with: "Doe"
     fill_in 'Username', with: "janedoe"
-    fill_in 'Email', with: "janedoe@example.com"
+    fill_in 'Email', with: "jd@example.com"
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
 
@@ -29,7 +29,7 @@ module RegistrationHelper
   def register_with_another_user_email
     fill_in 'First name', with: "Jean"
     fill_in 'Last name', with: "Dope"
-    fill_in 'Username', with: "janedoe@example.com"
+    fill_in 'Username', with: "jd@example.com"
     fill_in 'Password', with: 'password17'
     fill_in 'Password confirmation', with: 'password17'
 
