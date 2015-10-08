@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/manifest.json">
+  <%= favicon_link_tag 'apple-icon-57x57.png' %>
+  <%= favicon_link_tag 'apple-icon-60x60.png' %>
+  <%= favicon_link_tag 'apple-icon-72x72.png' %>
+  <%= favicon_link_tag 'apple-icon-76x76.png' %>
+  <%= favicon_link_tag 'apple-icon-114x114.png' %>
+  <%= favicon_link_tag 'apple-icon-120x120.png' %>
+  <%= favicon_link_tag 'apple-icon-144x144.png' %>
+  <%= favicon_link_tag 'apple-icon-152x152' %>
+  <%= favicon_link_tag 'apple-icon-180x180' %>
+  <%= favicon_link_tag 'android-icon-192x192.png' %>
+  <%= favicon_link_tag 'favicon-32x32.png' %>
+  <%= favicon_link_tag 'favicon-96x96.png' %>
+  <%= favicon_link_tag 'favicon-16x16.png' %>
+  <title>Kids Who code</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Miltonian+Tattoo' rel='stylesheet' type='text/css'>
+  <%- flash.each do |key, value| -%>
+    <div class="large-12 alert-box <%= key %>">
+      <%= value %>
+    </div>
+  <%- end -%>
+  <%= render "layouts/topbarhomes" %>
+  <section class="main">
+    <%= yield %>
+  </section>
+  <%= javascript_include_tag 'application' %>
+  <%= yield :extra_footer %>
+<script>
+  function sideNav() {
+    if ($(window).width() < 769) {
+      $('.off-canvas-wrap').removeClass('move-right');
+      $('.left-off-canvas-toggle').show();
+    } else {
+      $('.off-canvas-wrap').addClass('move-right');
+      $('.left-off-canvas-toggle').hide();
+    }
+  }
+
+  $(window).resize(function() {
+    sideNav();
+  });
+</script>
+</body>
+</html>
