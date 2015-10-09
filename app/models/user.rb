@@ -4,15 +4,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable
   belongs_to :group
-  has_many :grades
-  has_many :userplans
-  has_many :curricula
+  has_many :grades, dependent: :destroy
+  has_many :userplans, dependent: :destroy
+  has_many :curricula, through: :userplans
   has_many :assignments, through: :curricula
   validates :username, presence: true, length: { maximum: 15 }
   validates :username, uniqueness: true, case_sensitive: false
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 25 }
-  validates :email, uniqueness: true
   validates_length_of :password, in: 8..15, allow_blank: false
   validate :validate_username
 
@@ -27,6 +26,12 @@ class User < ActiveRecord::Base
   def validate_username
     if User.where(email: username).exists?
       errors.add(:username, :invalid)
+    end
+  end
+
+  def validate_email
+    if User.where(username: email).exists?
+      errors.add(:email, :invalid)
     end
   end
 

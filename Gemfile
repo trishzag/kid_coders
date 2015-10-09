@@ -28,6 +28,8 @@ group :development, :test do
   gem 'cucumber'
   gem 'guard-jasmine'
   gem 'shoulda-matchers', '~> 2.8.0'
+  gem 'faker'
+  gem 'orderly'
 end
 
 group :development do
@@ -41,5 +43,4 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'faker'
 end

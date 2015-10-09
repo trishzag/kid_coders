@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :create, :destroy]
 
-  resources :curricula, only: :index
+  resources :curricula, only: [:index, :show]
 end

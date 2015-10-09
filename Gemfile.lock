@@ -278,6 +278,7 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    orderly (0.0.2)
     orm_adapter (0.5.0)
     pg (0.18.3)
     phantomjs (1.9.8.0)
@@ -426,6 +427,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
+  orderly
   pg
   pry-rails
   rails (= 4.2.4)
