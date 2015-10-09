@@ -1,7 +1,9 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 require 'coveralls'
+Coveralls.wear!('rails')
 require 'support/login_helper'
 require 'support/registration_helper'
-Coveralls.wear!('rails')
 
 RSpec.configure do |config|
 

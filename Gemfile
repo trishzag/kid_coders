@@ -30,6 +30,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 2.8.0'
   gem 'faker'
   gem 'orderly'
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development do

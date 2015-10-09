@@ -1,85 +1,30 @@
 <div class="row">
-  <div class="section-box text-center panel large-6 medium-8 small-12
-  large-centered medium-centered small-centered columns">
-    <h1 class="section-title"><%= @user.username %></h1>
-  </div>
-</div>
-<% if current_user == @user %>
-  <div class="row content text-center">
-    <button data-remote="true" class="round info button button-edit-form">Account Settings</button>
-    <div class="editform">
-      <div class="account-box">
-        <div class="account-settings clearfix">
-          <%= form_for(@user, url: registration_path(@user), html: { method: :put }, class: "settings-form") do |f| %>
-            <fieldset>
-              <legend>Account Settings</legend>
-              <div>
-                <div class="large-6 columns">
-                  <div class="field">
-                    <%= f.label :first_name %>
-                    <i>(15 characters maximum)</i><br />
-                    <%= f.text_field :first_name %>
-                  </div>
-                  <div class="field">
-                    <%= f.label :last_name %>
-                    <i>(15 characters maximum)</i><br />
-                    <%= f.text_field :last_name %>
-                  </div>
-                </div>
-                <div class="large-6 columns">
-                  <div class="field">
-                    <%= f.label :username %>
-                    <i>(15 characters maximum)</i><br />
-                    <%= f.text_field :username %>
-                  </div>
-                </div>
-                <div class="large-6 columns">
-                  <div class="field">
-                    <%= f.label :email %><br />
-                    <%= f.email_field :email, autofocus: true %>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="large-6 columns">
-                  <div class="field">
-                    <%= f.label :password %>
-                    <% if @minimum_password_length %>
-                    <em>(<%= @minimum_password_length %> characters minimum)</em>
-                    <% end %><br />
-                    <%= f.password_field :password, autocomplete: "off" %>
-                  </div>
-                </div>
-                <div class="large-6 columns">
-                  <div class="field">
-                    <%= f.label :password_confirmation %><br />
-                    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-                  </div>
-                </div>
-              </div>
-
-              <div class="field">
-                <%= f.label :current_password %> <i>** we need your current password to confirm your changes **</i>
-                <%= f.password_field :current_password, autocomplete: "off" %>
-              </div>
-              <div class="actions">
-                <ul class="right button-group round even-2 large-4 medium-8 small-12 columns">
-                  <li><%= link_to "Back", :back, class: "small secondary button" %></li>
-                  <li><%= f.submit "Update", class: "small button" %></li>
-                </ul>
-              </div>
-            </fieldset>
-          <% end %>
-        </div>
-        <div class="cancel-account">
-          <p>
-            Unhappy?
-            <%= button_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "button alert round" %>
-          </p>
-        </div>
+  <div class="medium-4 columns">
+    <div class="card">
+      <div class="image">
+        <img src="http://static.pexels.com/wp-content/uploads/2014/07/alone-clouds-hills-1909-527x350.jpg">
+        <span class="title"><%= @user.username %></span>
+      </div>
+      <div class="content">
+        <p>I shall be telling this with a sigh	. Somewhere ages and ages hence:	 Two roads diverged in a wood, and I —	 I took the one less traveled by.	 And that has made all the difference.</p>
+      </div>
+      <div class="action">
+        <%- if current_user -%>
+        <%= link_to "Account Settings", edit_user_registration_path(@user) %>
+        <%- end -%>
       </div>
     </div>
   </div>
-  <% end %>
+  <div class="medium-6 columns end">
+    <div class="card">
+      <div class="content">
+        <span class="title">Robert Frost</span>
+        <p>Two roads diverged in a yellow wood,	 And sorry I could not travel both	 And be one traveler, long I stood	 And looked down one as far as I could	. To where it bent in the undergrowth;</p>
+      </div>
+      <div class="action">
+        <a href='#'>This is a link</a>
+        <a href='#'>This is a link</a>
+      </div>
+    </div>
   </div>
 </div>
