@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="small-10 large-centered columns">
+         <row>
+           <h1>Our Curricula</h1>
+         </row>
+        <div class="small-2 medium-4 large-12 panels">
+          <div class=>
+            <% @curricula.each do |curriculum| %>
+            <tr>
+              <td><h3><%= curriculum.name %></h3></td>
+              <td><h4><%= link_to "See Curriculum Detail", curriculum_path(curriculum) %><h4></td>
+            </tr>
+          </deliveries>
+        <% end %>
+    </div>
+  </div>
+</div>

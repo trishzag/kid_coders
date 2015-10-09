@@ -18,6 +18,12 @@ FactoryGirl.define do
 
   factory :curriculum do
     sequence(:name) { |n| "Curriculum name#{n}" }
+
+    factory :curriculum_with_assignments do
+      after(:create) do |curriculum|
+        5.times { create(:assignment, curriculum: curriculum) }
+      end
+    end
   end
 
   factory :grade do
