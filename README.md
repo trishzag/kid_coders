@@ -8,8 +8,8 @@ Kid Coders is a learn-to-code website hosted at https://.  The application was d
 
 ![Build Status](https://codeship.com/projects/278d46e0-4d07-0133-9ee6-6e1cce453881/status?branch=master)
 ![Coverage Status](https://coveralls.io/repos/trishzag/kid_coders/badge.png)
-[![Code Climate](https://codeclimate.com/github/trishzag/kid_coders/badges/gpa.svg)](https://codeclimate.com/github/trishzag/kid_coders)
-[![Test Coverage](https://codeclimate.com/github/trishzag/kid_coders/badges/coverage.svg)](https://codeclimate.com/github/trishzag/kid_coders/coverage)
+![Code Climate](https://codeclimate.com/github/trishzag/kid_coders/badges/gpa.svg)
+![Test Coverage](https://codeclimate.com/github/trishzag/kid_coders/badges/coverage.svg)
 
 # Topics
 
