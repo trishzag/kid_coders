@@ -10,7 +10,7 @@ feature 'user views assignment detail', %{As a User
   [X] I must see a link to the assignment detail from the curriculum show page
   [X] I must see a link to the assignment detail from my user account page if I
   have the curriculum on my userplan
-} do
+  } do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:curriculum) { FactoryGirl.create(:curriculum_with_assignments) }
 
