@@ -40,8 +40,9 @@ FactoryGirl.define do
 
     factory :curriculum_with_assignments do
       after(:create) do |curriculum|
-        10.times { create(:assignment_with_contents_resources,
-        curriculum: curriculum)}
+        10.times do
+          create(:assignment_with_contents_resources, curriculum: curriculum)
+        end
       end
     end
   end
