@@ -4,6 +4,7 @@ require 'coveralls'
 Coveralls.wear!('rails')
 require 'support/login_helper'
 require 'support/registration_helper'
+require 'support/curricula_helper'
 
 RSpec.configure do |config|
 

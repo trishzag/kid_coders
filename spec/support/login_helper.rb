@@ -17,7 +17,7 @@ module LoginHelper
     click_button 'Log in'
   end
 
-  def log_out(user)
-    click_button 'Sign Out'
+  def sign_out(user)
+    find('//ul/a').click
   end
 end

@@ -11,14 +11,13 @@ group_attributes = { name: "#{Faker::Lorem.characters(15)}" }
   Group.create(group_attributes)
 end
 
-10.times do
+20.times do
 user_attributes = {
   first_name: "#{Faker::Lorem.characters(12)}",
   last_name: "#{Faker::Lorem.characters(15)}",
   username: "#{Faker::Lorem.characters(15)}",
   email: "#{Faker::Lorem.characters(8)}@#{Faker::Lorem.characters(8)}.com",
-  encrypted_password: "#{Faker::Lorem.characters(15)}",
-  group_id: "#{(5)}"
+  password: "#{Faker::Lorem.characters(15)}"
 }
   User.create(user_attributes)
 end

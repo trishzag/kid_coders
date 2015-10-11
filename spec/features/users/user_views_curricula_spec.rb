@@ -19,17 +19,17 @@ feature 'user views curricula', %{As a User
     login_with_username(user)
     click_link("View Curricula")
 
-    expect(page).to have_content(curriculum.name)
-    expect(page).to have_content(curriculum2.name)
-    expect(page).to have_content(curriculum3.name)
+    expect(page.body).to have_content(/#{curriculum.name}.*#{curriculum2.name}/im)
+    expect(page.body).to have_content(/#{curriculum.name}.*#{curriculum3.name}/im)
+    expect(page.body).to have_content(/#{curriculum2.name}.*#{curriculum3.name}/im)
   end
 
   scenario "visitor views curricula index" do
     visit root_path
     click_link("View Curricula")
 
-    expect(page).to have_content(curriculum.name)
-    expect(page).to have_content(curriculum2.name)
-    expect(page).to have_content(curriculum3.name)
+    expect(page.body).to have_content(/#{curriculum.name}.*#{curriculum2.name}/im)
+    expect(page.body).to have_content(/#{curriculum.name}.*#{curriculum3.name}/im)
+    expect(page.body).to have_content(/#{curriculum2.name}.*#{curriculum3.name}/im)
   end
 end
