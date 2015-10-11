@@ -5,10 +5,10 @@ feature 'user views assignment detail', %{As a User
   So that I have access to all of the materials while I complete the assignment
 
   Acceptance Criteria
-  [ ] I must be signed in to view detailed information about each assignment
-  [ ] I must see all content for the assignment on the assignment detail page
-  [ ] I must see a link to the assignment detail from the curriculum show page
-  [ ] I must see a link to the assignment detail from my user account page if I
+  [X] I must be signed in to view detailed information about each assignment
+  [X] I must see all content for the assignment on the assignment detail page
+  [X] I must see a link to the assignment detail from the curriculum show page
+  [X] I must see a link to the assignment detail from my user account page if I
   have the curriculum on my userplan
 } do
   let!(:user) { FactoryGirl.create(:user) }
@@ -50,19 +50,19 @@ feature 'user views assignment detail', %{As a User
         expect(page).to have_content(resource.source)
       end
 
-      expect(page).to_not have_content(other_assignment.title)
-      contents = other_assignment.contents
-        contents.each do |content|
-          expect(page).to_not have_content(content.title)
-          expect(page).to_not have_content(content.description)
-          expect(page).to_not have_content(content.source)
-        end
+    expect(page).to_not have_content(other_assignment.title)
+    contents = other_assignment.contents
+      contents.each do |content|
+        expect(page).to_not have_content(content.title)
+        expect(page).to_not have_content(content.description)
+        expect(page).to_not have_content(content.source)
+      end
 
-      resources = other_assignment.resources
-        resources.each do |resource|
-          expect(page).to_not have_content(resource.name)
-          expect(page).to_not have_content(resource.source)
-        end
+    resources = other_assignment.resources
+      resources.each do |resource|
+        expect(page).to_not have_content(resource.name)
+        expect(page).to_not have_content(resource.source)
+      end
   end
 
   scenario 'user can access the assignment detail from user detail page' do
