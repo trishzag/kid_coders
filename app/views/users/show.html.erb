@@ -23,15 +23,14 @@
         <span class="title">Assignments</span>
         <p>
           <row>
-            <%- if @assignments.size > 0 -%>
-            <%= @assignments.each do |assignment| %>
+            <% if @assignments.size > 0 %>
+            <% @assignments.each do |assignment| %>
             <%= assignment.title %>
-            <%= assignment.grade %>
-            <%= link_to assignment_path(assignment) %>
-            <%- end -%>
-            <%- else -%>
+            <% link_to assignment_path(assignment) %>
+            <% end %>
+            <% else %>
             <%= "You have no assignments."  %>
-            <%- end -%>
+            <% end %>
           <row>
         </p>
       </div>
@@ -45,9 +44,9 @@
       <p>
         <row>
           <%- if @curricula.size > 0 -%>
-          <%= @curricula.each do |curriculum| %>
-          <%= curriculum.title %>
-          <%= link_to curriculum_path(curriculum_path) %>
+          <% @curricula.each do |curriculum| %>
+          <%= curriculum.name %>
+          <%- link_to curriculum_path(curriculum_path) -%>
           <%- end -%>
           <%- else -%>
           <%= "You have no curricula assigned."  %>

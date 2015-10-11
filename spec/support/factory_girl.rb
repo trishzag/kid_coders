@@ -1,12 +1,12 @@
 require 'factory_girl'
+require 'faker'
 
 FactoryGirl.define do
   factory :user do
-
-    sequence(:username) { |n| "user#{n}" }
-    sequence(:first_name) { |n| "First#{n}" }
-    sequence(:last_name) { |n| "Last#{n}" }
-    sequence(:email) { |n| "user_email#{n}@example.com" }
+    sequence(:username) { "#{Faker::Lorem.characters(12)}" }
+    sequence(:first_name) { "#{Faker::Lorem.characters(8)}" }
+    sequence(:last_name) { "#{Faker::Lorem.characters(10)}" }
+    sequence(:email) { "#{Faker::Lorem.characters(6)}@#{Faker::Lorem.characters(6)}.com" }
     password "password"
     password_confirmation "password"
 
@@ -24,12 +24,8 @@ FactoryGirl.define do
   end
 
   factory :assignment do
-    sequence(:title) { |n| "title#{n}" }
+    sequence(:title) { "#{Faker::Lorem.characters(12)}" }
     sequence(:curriculum_id)
-
-    factory :graded_assignment do
-      after(:create) { create(:grade, assignment: assignment) }
-    end
 
     factory :assignment_with_contents_resources do
       after(:create) do |assignment|
@@ -37,29 +33,20 @@ FactoryGirl.define do
         5.times { create(:resource, assignment: assignment) }
       end
     end
-
-    factory :graded_assignment_with_contents_resources do
-      after(:create) do |assignment|
-        5.times { create(:content, assignment: graded_assignment) }
-        5.times { create(:resource, assignment: graded_assignment) }
-      end
-    end
-
-    factory :related_assignments do
-      after(:create) do |assignment|
-        10.times { create(:graded_assignment_with_contents_resources) }
-      end
-    end
   end
 
   factory :curriculum do
-    sequence(:name) { |n| "Curriculum name#{n}" }
+    sequence(:name) { "#{Faker::Lorem.characters(12)}" }
   end
 
   factory :grade do
     sequence(:name) { "Pass" || "Requires Work" }
     sequence(:user_id)
     sequence(:assignment_id)
+
+    factory :graded_assignment_with_contents_resources do
+      after(:create) { create(:assignment_with_contents) }
+    end
   end
 
   factory :group do
@@ -67,16 +54,15 @@ FactoryGirl.define do
   end
 
   factory :content do
-    sequence(:title) { |n| "Title#{n}" }
-    sequence(:description) { |n| "Description#{n}" }
-    sequence(:source) { |n| "Source#{n}" }
+    sequence(:title) { "#{Faker::Lorem.characters(12)}" }
+    sequence(:description) { "#{Faker::Lorem.characters(25)}" }
+    sequence(:source) { "#{Faker::Lorem.characters(12)}" }
     sequence(:assignment_id)
   end
 
   factory :resource do
-    sequence(:title) { |n| "Title#{n}" }
-    sequence(:description) { |n| "Description#{n}" }
-    sequence(:source) { |n| "Source#{n}" }
+    sequence(:name) { "#{Faker::Lorem.characters(12)}" }
+    sequence(:source) { "#{Faker::Lorem.characters(12)}" }
     sequence(:assignment_id)
   end
 
