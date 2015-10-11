@@ -51,7 +51,6 @@ feature 'user views user detail', %{
     login_with_username(user2)
     visit user_path(user2)
 
-
     assignments.each do |assignment|
       expect(page).to have_content(assignment.title)
     end

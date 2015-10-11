@@ -70,12 +70,6 @@ FactoryGirl.define do
     sequence(:user_id)
     sequence(:curriculum_id)
 
-    factory :userplan_with_one_curriculum do
-      after (:create) do |userplan|
-        create(:curriculum)
-      end
-    end
-
     factory :userplan_with_curricula do
       after (:create) do |userplan|
         2.times { create(:curriculum) }

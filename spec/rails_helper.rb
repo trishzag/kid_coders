@@ -10,7 +10,6 @@ require File.join(File.dirname(__FILE__), 'support/valid_attribute')
 require File.join(File.dirname(__FILE__), 'support/factory_girl')
 require File.join(File.dirname(__FILE__), 'support/registration_helper')
 require File.join(File.dirname(__FILE__), 'support/login_helper')
-require File.join(File.dirname(__FILE__), 'support/curricula_helper')
 require 'capybara/rspec'
 require 'selenium-webdriver'
 require 'database_cleaner'

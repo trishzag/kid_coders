@@ -35,9 +35,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def user_assignments(user)
-  end
-
   attr_accessor :login
 
   protected
