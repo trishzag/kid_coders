@@ -31,7 +31,7 @@ feature 'user views curriculum detail', %{As a User
     expect(page).to have_content(user.username)
   end
 
-  scenario 'user visits curriculum detail page' do
+  scenario 'visitor cannot access curriculum detail page' do
     assignments = curriculum.assignments
     visit curriculum_path(curriculum)
 

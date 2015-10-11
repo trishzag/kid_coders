@@ -24,7 +24,7 @@ end
 
 50.times do
 assignment_attributes = {
-  title: "#{Faker::Lorem.characters(60)}",
+  title: "#{Faker::Lorem.characters(25)}",
   curriculum_id: "#{rand(5)}"
 }
   Assignment.create(assignment_attributes)
