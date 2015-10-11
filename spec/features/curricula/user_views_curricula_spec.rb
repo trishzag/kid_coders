@@ -9,7 +9,7 @@ feature 'user views curricula', %{As a User
   [X] I must be able to navigate to the curricula index from the home page
   [X] I must be able to view all curricula as a user or visitor
 } do
-  let(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryGirl.create(:user) }
   let!(:curriculum) { FactoryGirl.create(:curriculum, name: "Apples") }
   let!(:curriculum2) { FactoryGirl.create(:curriculum, name: "name2") }
   let!(:curriculum3) { FactoryGirl.create(:curriculum, name: "Zoos") }

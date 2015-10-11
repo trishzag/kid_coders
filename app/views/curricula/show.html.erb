@@ -1,0 +1,11 @@
+<h1><%= @curriculum.name %></h1>
+<h3>Assignments</h3>
+<ul class="accordion" data-accordion>
+  <li class="accordion-navigation">
+    <% if @assignments.count > 0 %>
+      <% @assignments.each do |assignment| %>
+        <a href="#panel-<%= assignment.id %>"><%= assignment.title %></a>
+      <% end %>
+    <% end %>
+  </li>
+</ul>

@@ -7,6 +7,7 @@ class CurriculaController < ApplicationController
 
   def show
     @curriculum = Curriculum.find(params[:id])
+    @assignments = @curriculum.assignments
   end
 
   protected
