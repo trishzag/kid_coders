@@ -1,0 +1,25 @@
+<h1><%= @assignment.title %></h1>
+  <h3>Contents</h3>
+    <ul class="accordion" data-accordion>
+      <li class="accordion-navigation">
+        <% @contents.each do |content| %>
+        <a href="#panel-<%= content.id %>"><%= content.title %></a>
+        <div id="panel-<%= content.id %>" class="content active">
+          <%= content.description %>
+          <br>
+          <%= content.source %>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  <h3>Resources</h3>
+    <ul class="accordion" data-accordion>
+      <li class="accordion-navigation">
+        <% @resources.each do |resource| %>
+        <a href="#panel-<%= resource.id %>"><%= resource.name %></a>
+        <div id="panel-<%= resource.id %>" class="content active">
+          <%= resource.source %>
+        </div>
+        <% end %>
+      </li>
+    </ul>

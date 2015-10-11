@@ -37,6 +37,14 @@ FactoryGirl.define do
 
   factory :curriculum do
     sequence(:name) { "#{Faker::Lorem.characters(12)}" }
+
+    factory :curriculum_with_assignments do
+      after(:create) do |curriculum|
+        10.times do
+          create(:assignment_with_contents_resources, curriculum: curriculum)
+        end
+      end
+    end
   end
 
   factory :grade do
