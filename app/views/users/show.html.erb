@@ -26,7 +26,7 @@
             <% if @assignments.size > 0 %>
             <% @assignments.each do |assignment| %>
             <%= assignment.title %>
-            <% link_to assignment_path(assignment) %>
+            <%= link_to "Details", assignment_path(assignment) %>
             <% end %>
             <% else %>
             <%= "You have no assignments."  %>

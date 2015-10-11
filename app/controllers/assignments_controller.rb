@@ -6,4 +6,10 @@ class AssignmentsController < ApplicationController
     @contents = @assignment.contents.order(title: :asc)
     @resources = @assignment.resources.order(name: :asc)
   end
+
+  protected
+
+  def assignment_params
+    params.require(:curriculum).permit(:title, :id)
+  end
 end
