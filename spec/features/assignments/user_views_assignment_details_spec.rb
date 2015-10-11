@@ -23,7 +23,7 @@ feature 'user views assignment detail', %{As a User
     expect(page).to have_content("You need to sign in or sign up before")
     expect(page).to have_content("Log in")
     assignments.each do |assignment|
-      expect(page).to_not have_content(assignment.title)
+    expect(page).to_not have_content(assignment.title)
     end
   end
 
@@ -38,31 +38,31 @@ feature 'user views assignment detail', %{As a User
 
     expect(page).to have_content(assignment.title)
     contents = assignment.contents
-      contents.each do |content|
-        expect(page).to have_content(content.title)
-        expect(page).to have_content(content.description)
-        expect(page).to have_content(content.source)
-      end
+    contents.each do |content|
+      expect(page).to have_content(content.title)
+      expect(page).to have_content(content.description)
+      expect(page).to have_content(content.source)
+    end
 
     resources = assignment.resources
-      resources.each do |resource|
-        expect(page).to have_content(resource.name)
-        expect(page).to have_content(resource.source)
-      end
+    resources.each do |resource|
+      expect(page).to have_content(resource.name)
+      expect(page).to have_content(resource.source)
+    end
 
     expect(page).to_not have_content(other_assignment.title)
     contents = other_assignment.contents
-      contents.each do |content|
-        expect(page).to_not have_content(content.title)
-        expect(page).to_not have_content(content.description)
-        expect(page).to_not have_content(content.source)
-      end
+    contents.each do |content|
+      expect(page).to_not have_content(content.title)
+      expect(page).to_not have_content(content.description)
+      expect(page).to_not have_content(content.source)
+    end
 
     resources = other_assignment.resources
-      resources.each do |resource|
-        expect(page).to_not have_content(resource.name)
-        expect(page).to_not have_content(resource.source)
-      end
+    resources.each do |resource|
+      expect(page).to_not have_content(resource.name)
+      expect(page).to_not have_content(resource.source)
+    end
   end
 
   scenario 'user can access the assignment detail from user detail page' do
@@ -77,16 +77,16 @@ feature 'user views assignment detail', %{As a User
 
     expect(page).to have_content(assignment.title)
     contents = assignment.contents
-      contents.each do |content|
-        expect(page).to have_content(content.title)
-        expect(page).to have_content(content.description)
-        expect(page).to have_content(content.source)
-      end
+    contents.each do |content|
+      expect(page).to have_content(content.title)
+      expect(page).to have_content(content.description)
+      expect(page).to have_content(content.source)
+    end
 
     resources = assignment.resources
-      resources.each do |resource|
-        expect(page).to have_content(resource.name)
-        expect(page).to have_content(resource.source)
-      end
+    resources.each do |resource|
+      expect(page).to have_content(resource.name)
+      expect(page).to have_content(resource.source)
+    end
   end
 end
