@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :authorize_user, except: [:show]
 
   def index
@@ -10,7 +11,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if !current_user
+      flash[:alert] = 'You do not have permission to access this user page.'
+      redirect_to root_path
+    elsif current_user == User.find(params[:id])
+      @user = current_user
+      @curricula = @user.curricula
+      @assignments = @user.assignments
+    else
+      flash[:alert] = 'You do not have permission to access this user page.'
+      redirect_to user_path(current_user)
+    end
   end
 
   def destroy

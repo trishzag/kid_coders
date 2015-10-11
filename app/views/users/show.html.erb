@@ -6,7 +6,9 @@
         <span class="title"><%= @user.username %></span>
       </div>
       <div class="content">
-        <p>I shall be telling this with a sigh	. Somewhere ages and ages hence:	 Two roads diverged in a wood, and I —	 I took the one less traveled by.	 And that has made all the difference.</p>
+        <p>
+          Your Badges
+        </p>
       </div>
       <div class="action">
         <%- if current_user -%>
@@ -15,16 +17,45 @@
       </div>
     </div>
   </div>
-  <div class="medium-6 columns end">
+  <div class="medium-6 large-8 columns end">
     <div class="card">
       <div class="content">
-        <span class="title">Robert Frost</span>
-        <p>Two roads diverged in a yellow wood,	 And sorry I could not travel both	 And be one traveler, long I stood	 And looked down one as far as I could	. To where it bent in the undergrowth;</p>
+        <span class="title">Assignments</span>
+        <p>
+          <row>
+            <% if @assignments.size > 0 %>
+            <% @assignments.each do |assignment| %>
+            <%= assignment.title %>
+            <% link_to assignment_path(assignment) %>
+            <% end %>
+            <% else %>
+            <%= "You have no assignments."  %>
+            <% end %>
+          <row>
+        </p>
       </div>
       <div class="action">
-        <a href='#'>This is a link</a>
-        <a href='#'>This is a link</a>
+        <a href=''>This is a link</a>
       </div>
+    </div>
+  <div class="card">
+    <div class="content">
+      <span class="title">Curricula</span>
+      <p>
+        <row>
+          <%- if @curricula.size > 0 -%>
+          <% @curricula.each do |curriculum| %>
+          <%= curriculum.name %>
+          <%- link_to curriculum_path(curriculum_path) -%>
+          <%- end -%>
+          <%- else -%>
+          <%= "You have no curricula assigned."  %>
+          <%- end -%>
+        <row>
+      </p>
+    </div>
+    <div class="action">
+      <a href='/curricula'>View All Curricula</a>
     </div>
   </div>
 </div>
