@@ -12,7 +12,7 @@ feature 'user views user detail', %{
   [X] I must be able to navigate to my account detail page from the site index
 } do
   let!(:user) { FactoryGirl.create(:user_with_two_userplans) }
-  let!(:user2) { FactoryGirl.create(:user_with_userplan) }
+  let!(:user2) { FactoryGirl.create(:user_with_two_userplans) }
 
   scenario "user views user detail page, including curricula" do
     curricula = user2.curricula
