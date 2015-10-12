@@ -27,9 +27,21 @@ RSpec.describe User, type: :model do
   it { should validate_length_of(:password).is_at_most(15) }
 
   it { should have_valid(:password).when("password") }
-  it { should have_valid(:password).when("password") }
+  it { should have_valid(:password).when("spaghetti82d") }
   it { should_not have_valid(:password).when(nil, "break", "98375P") }
 
   it { should have_valid(:email).when("casey@inkedgirl.com") }
   it { should have_valid(:email).when(nil, "") }
+
+  describe "#admin?" do
+    it "is not an admin if the role is not admin" do
+      user = FactoryGirl.create(:user, role: "member")
+      expect(user.admin?). to eq(false)
+    end
+
+    it "is an admin if the role is admin" do
+      user = FactoryGirl.create(:user, role: "admin")
+      expect(user.admin?).to eq(true)
+    end
+  end
 end
