@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true, case_sensitive: false
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 25 }
-  validates :password, length: { in: 8..15 } , allow_blank: false
+  validates :password, length: { in: 8..15 }, allow_blank: false
   validate :validate_username
 
   def email_required?
