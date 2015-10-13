@@ -25,7 +25,6 @@ feature 'admin views users index page', %{
   end
 
   scenario 'user with admin role can view users index' do
-    students =
     login_with_username(admin)
     click_link("View All Users")
 
