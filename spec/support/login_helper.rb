@@ -17,7 +17,7 @@ module LoginHelper
     click_button 'Log in'
   end
 
-  # def sign_out(user)
-  #   click_link("Sign Out")
-  # end
+  def sign_out(user)
+    find(:xpath, "//a[@href='/users/sign_out']").click
+  end
 end

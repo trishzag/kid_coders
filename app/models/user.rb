@@ -35,11 +35,11 @@ class User < ActiveRecord::Base
     end
   end
 
-  attr_accessor :login
-
   def admin?
-    role == "admin"
+    self.admin == true
   end
+
+  attr_accessor :login
 
   protected
 

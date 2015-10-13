@@ -9,15 +9,16 @@ FactoryGirl.define do
     sequence(:email) { "#{Faker::Lorem.characters(6)}@#{Faker::Lorem.characters(6)}.com" }
     password "password"
     password_confirmation "password"
+    admin false
 
     factory :user_with_userplan do
-      after (:create) do |user|
+      after(:create) do |user|
         create(:userplan_with_one_curriculum, user: user)
       end
     end
 
     factory :user_with_two_userplans do
-      after (:create) do |user|
+      after(:create) do |user|
         2.times { create(:userplan_with_curricula, user: user) }
       end
     end

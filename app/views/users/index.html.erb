@@ -1,0 +1,39 @@
+<div class="section-box large-centered small-centered large-2 small-4 columns">
+  <h2 class="section-title text-center">Users</h2>
+</div>
+<div>
+  <div data-alert class="alert-box">
+  <% if !current_user.admin? %>
+    <%= flash.alert = "You must be an admin to access that page." %>
+    <script type="text/javascript">
+    window.location.href="/"
+    </script>
+  </div>
+  <% else %>
+  <% @users.each do |user| %>
+    <div class="large-2 medium-4 small-6 columns">
+      <div class="panel text-center user-listing">
+        <ul>
+          <li><%= link_to user.username, user_path(user) %></li>
+          <li><%= user.email %></li>
+          <li>
+            <%= button_to 'Delete', user_path(user),
+              method: :delete, id: "delete-#{user.id}", class: "tiny button" %>
+          </li>
+          <li>
+            <% if user.admin? %>
+              <%= button_to 'Remove Admin', admin_path(user),
+                method: :delete, id: "admin-#{user.id}", class: "alert tiny button" %>
+            <% else %>
+              <%= button_to 'Make Admin', user_admin_index_path(user),
+                method: :post, id: "admin-#{user.id}", class: "secondary tiny button" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+</div>
+<footer>
+</footer>

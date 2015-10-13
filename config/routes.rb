@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'homes#index'
 
-  resources :users, only: [:index, :show, :create, :destroy]
+  resources :users, only: [:create, :destroy, :index, :show] do
+    resources :admin, only: :create
+  end
+  
+  resources :admin, only: [:create, :destroy, :index]
 
   resources :curricula, only: [:index, :show]
 

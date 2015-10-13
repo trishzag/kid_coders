@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :authorize_user, except: [:show]
 
   def index
     @users = User.all.page params[:page]
   end
 
-  def created
+  def create
     @user = User.new
   end
 
@@ -35,6 +34,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :first_name, :last_name, :email,
-    :password, :login, :role)
+    :password, :login, :admin)
   end
 end

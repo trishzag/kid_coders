@@ -27,6 +27,8 @@ module RegistrationHelper
   end
 
   def register_with_another_user_email
+    visit new_user_registration_path
+
     fill_in 'First name', with: "Jean"
     fill_in 'Last name', with: "Dope"
     fill_in 'Username', with: "jd@example.com"
