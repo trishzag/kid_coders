@@ -1,4 +1,5 @@
 <h1><%= @assignment.title %></h1>
+  <% if @contents.count > 0 %>
   <h3>Contents</h3>
     <ul class="accordion" data-accordion>
       <li class="accordion-navigation">
@@ -11,7 +12,9 @@
         </div>
         <% end %>
       </li>
+    <% end %>
     </ul>
+  <% if @resources.count > 0 %>
   <h3>Resources</h3>
     <ul class="accordion" data-accordion>
       <li class="accordion-navigation">
@@ -22,4 +25,5 @@
         </div>
         <% end %>
       </li>
+    <% end %>
     </ul>

@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 25 }
   validates :password, length: { in: 8..15 }, allow_blank: false
+  validates :role, presence: true, default: false
   validate :validate_username
 
   def email_required?
@@ -35,11 +36,11 @@ class User < ActiveRecord::Base
     end
   end
 
-  attr_accessor :login
-
   def admin?
-    role == "admin"
+    admin == true
   end
+
+  attr_accessor :login
 
   protected
 

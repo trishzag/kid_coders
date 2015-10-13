@@ -1,6 +1,6 @@
 module LoginHelper
   def login_with_email(user)
-    visit new_user_session_path
+    find(:xpath, "//a[@href='/users/sign_in']").click
 
     fill_in 'Login', with: user.email
     fill_in 'Password', with: user.password
@@ -9,7 +9,7 @@ module LoginHelper
   end
 
   def login_with_username(user)
-    visit new_user_session_path
+    find(:xpath, "//a[@href='/users/sign_in']").click
 
     fill_in 'Login', with: user.username
     fill_in 'Password', with: user.password
@@ -17,7 +17,7 @@ module LoginHelper
     click_button 'Log in'
   end
 
-  # def sign_out(user)
-  #   click_link("Sign Out")
-  # end
+  def sign_out(user)
+    find(:xpath, "//a[@href='/users/sign_out']").click
+  end
 end
