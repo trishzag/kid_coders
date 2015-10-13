@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_action :authorize_user
+  before_action :authenticate_user!
 
   def create
     @user = User.find(params[:user_id])
