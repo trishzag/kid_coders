@@ -7,6 +7,12 @@ class AssignmentsController < ApplicationController
     @resources = @assignment.resources.order(name: :asc)
   end
 
+  def graded(assignment)
+  end
+
+  def complete
+  end
+
   protected
 
   def assignment_params
