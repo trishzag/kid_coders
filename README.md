@@ -75,7 +75,7 @@ For example:
 
 # ER Diagram
 
-![Entity Relationship Diagram](kid_coders_erd.png)
+![Entity Relationship Diagram](KidsWhoCodeERD.png)
 
 # License
 
