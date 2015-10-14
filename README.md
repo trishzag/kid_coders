@@ -4,7 +4,7 @@
 
 # Introduction
 
-Kid Coders is a learn-to-code website hosted at https://.  The application was designed and built as a "breakable toy" team during the Fall 2015 cohort at Launch Academy (http://www.launchacademy.com/).
+Kid Coders is a learn-to-code website hosted at https://kidswhocode.herokuapp.com.  The application was designed and built as a "breakable toy" team during the Fall 2015 cohort at Launch Academy (http://www.launchacademy.com/).  It is currently be extended for deployment in Summer 2015 at the Boys & Girls Club of Greater Haverhill (http://haverhillbgc.org/).  Please feel free to contribute your ideas and expertise to this project!
 
 ![Build Status](https://codeship.com/projects/278d46e0-4d07-0133-9ee6-6e1cce453881/status?branch=master)
 ![Coverage Status](https://coveralls.io/repos/trishzag/kid_coders/badge.png)
@@ -31,8 +31,14 @@ Kid Coders was developed in Ruby on Rails.  Initial setup was done using the mak
 
 Also used during the application development
 
-- Foundation (http://foundation.zurb.com/) was used for css styling.
+- Carrierwave () was used to create kid-friendly avatars for users.
 - Devise (https://github.com/plataformatec/devise) was used for authentication.
+  This was also extended to customize login using either username or email and to provide admin functionality.
+- Foundation (http://foundation.zurb.com/) was used for css styling.
+- HighCharts () was used to create display graphics as a visual indicator of
+  student progress.
+- Merit (https://github.com/merit-gem/merit) was used to create a merit badge
+  system, which awards badges to users for specific achievements.  This was customized by adding an image to each badge created.
 
 
 ## Testing
@@ -48,10 +54,12 @@ Install [bundle](http://bundler.io/).
 ## Test Development
 
 The following gems were used to develop and run unit and feature tests:
+- Capybara (https://github.com/jnicklas/capybara)
+- Cucumber ()
+- Jasmine ()
 - RAKE (http://rake.rubyforge.org/)
 - RSpec (http://rspec.info/)
 - selenium-webdriver (https://github.com/seleniumhq/selenium)
-- Capybara (https://github.com/jnicklas/capybara)
 - shoulda-matchers (http://matchers.shoulda.io/)
 - valid_attributes (https://github.com/bcardarella/valid_attribute)
 
@@ -75,7 +83,7 @@ For example:
 
 # ER Diagram
 
-![Entity Relationship Diagram](kid_coders_erd.png)
+![Entity Relationship Diagram](KidsWhoCodeERD.png)
 
 # License
 

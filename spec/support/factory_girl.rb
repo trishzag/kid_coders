@@ -58,10 +58,6 @@ FactoryGirl.define do
     end
   end
 
-  factory :group do
-    sequence(:name)
-  end
-
   factory :content do
     sequence(:title) { "#{Faker::Lorem.characters(12)}" }
     sequence(:description) { "#{Faker::Lorem.characters(25)}" }

@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 // = require_tree .
+// /app/assets/javascripts/foundation.min.js
+// /app/assets/javascripts/modernizr.js
 
 $(function(){ $(document).foundation(); });

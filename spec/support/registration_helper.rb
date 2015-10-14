@@ -1,6 +1,5 @@
 module RegistrationHelper
   def create_registration
-    FactoryGirl.build(:group)
     visit new_user_registration_path
 
     fill_in 'First name', with: "Jane"
