@@ -23,6 +23,7 @@
   <title>Kids Who code</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag :modernizr %>
+  <%= javascript_include_tag :application %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -54,5 +55,6 @@
     sideNav();
   });
 </script>
+<script type="text/javascript">$(function(){ $(document).foundation(); });</script>
 </body>
 </html>
