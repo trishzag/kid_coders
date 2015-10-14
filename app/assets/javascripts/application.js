@@ -17,4 +17,4 @@
 // /app/assets/javascripts/foundation.min.js
 // /app/assets/javascripts/modernizr.js
 
-$(document).foundation();
+$(function(){ $(document).foundation(); });
