@@ -17,6 +17,7 @@ gem 'fog'
 gem 'kaminari'
 gem 'rails-html-sanitizer', '>= 1.0.1'
 gem 'modernizr-rails', group: :assets
+gem 'ruby', '2.2.0'
 
 group :development, :test do
   gem 'database_cleaner'
