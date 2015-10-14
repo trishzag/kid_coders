@@ -22,14 +22,14 @@
   <%= favicon_link_tag 'favicon-16x16.png' %>
   <title>Kids Who code</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag "vendor/modernizr-rails" %>
+  <%= javascript_include_tag :modernizr %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Miltonian+Tattoo' rel='stylesheet' type='text/css'>
   <%- flash.each do |key, value| -%>
-    <div data-alert class="large-12 medium-8 alert-box <%= key %> round">
+    <div data-alert class="alert-box large-12 medium-8 <%= key %> round">
       <%= value %>
       <a href="" class="close">&times;</a>
     </div>
@@ -38,7 +38,7 @@
   <section class="main">
     <%= yield %>
   </section>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag :application %>
   <%= yield :extra_footer %>
 <script>
   function sideNav() {
@@ -54,6 +54,9 @@
   $(window).resize(function() {
     sideNav();
   });
+</script>
+<script>
+  $(document).foundation()
 </script>
 </body>
 </html>

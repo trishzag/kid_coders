@@ -16,7 +16,7 @@ gem 'dotenv-rails'
 gem 'fog'
 gem 'kaminari'
 gem 'rails-html-sanitizer', '>= 1.0.1'
-gem 'modernizr-rails', group: :assets
+gem 'modernizr-rails'
 
 group :development, :test do
   gem 'database_cleaner'
