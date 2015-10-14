@@ -25,11 +25,10 @@
   <%= javascript_include_tag :modernizr %>
   <%= javascript_include_tag :application %>
   <%= csrf_meta_tags %>
-
+  <%= render "layouts/topbar" %>
 </head>
 <body>
   <link href='https://fonts.googleapis.com/css?family=Miltonian+Tattoo' rel='stylesheet' type='text/css'>
-  <%= render "layouts/topbar" %>
   <%- flash.each do |key, value| -%>
   <div data-alert class="alert-box large-12 medium-8 <%= key %> round">
     <%= value %>
