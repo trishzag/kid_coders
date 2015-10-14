@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'devise'
-gem 'foundation-rails'
+gem 'foundation-rails', '>= 5.5.2.1'
 gem 'selenium-webdriver'
 gem 'dotenv-rails'
 gem 'fog'
