@@ -10,13 +10,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'devise'
-gem 'foundation-rails', '>= 5.5.2.1'
+gem 'foundation-rails', '~> 5.5.2.1'
 gem 'selenium-webdriver'
 gem 'dotenv-rails'
 gem 'fog'
 gem 'kaminari'
 gem 'rails-html-sanitizer', '>= 1.0.1'
 gem 'modernizr-rails'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'database_cleaner'
@@ -37,10 +38,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-end
-
-group :production do
-  gem 'rails_12factor'
 end
 
 group :test do
