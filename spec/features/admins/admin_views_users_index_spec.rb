@@ -22,6 +22,8 @@ feature 'admin views users index page', %{
     visit users_path
 
     expect(page).to have_content("You must be an admin to access that page.")
+    expect(page).to have_content("View Curricula")
+    expect(page).to have_content("Come learn to code")
   end
 
   scenario 'user with admin role can view users index' do

@@ -3,10 +3,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable
+
+  attr_accessor :login
+
   has_many :grades, dependent: :destroy
   has_many :userplans, dependent: :destroy
   has_many :curricula, through: :userplans
   has_many :assignments, through: :curricula
+
   validates :username, presence: true, length: { maximum: 15 }
   validates :username, uniqueness: true, case_sensitive: false
   validates :first_name, presence: true, length: { maximum: 20 }
@@ -38,7 +42,22 @@ class User < ActiveRecord::Base
     self.admin == true
   end
 
-  attr_accessor :login
+  def graded?
+    assignment.grade == "Pass" || assignment.grade == "Needs Work"
+  end
+
+  def complete?
+    assignment.grade == "Pass"
+  end
+
+  def count
+    total = 0
+    @user.assignments.each do |assignment|
+      if assignment.complete?
+        total += 1
+      end
+    end
+  end
 
   protected
 

@@ -32,6 +32,7 @@ FactoryGirl.define do
       after(:create) do |assignment|
         5.times { create(:content, assignment: assignment) }
         5.times { create(:resource, assignment: assignment) }
+        5.times { create(:grade, assignment: assignment) }
       end
     end
   end
@@ -49,13 +50,9 @@ FactoryGirl.define do
   end
 
   factory :grade do
-    sequence(:name) { "Pass" || "Requires Work" }
+    sequence(:name) { ["Pass", "Requires Work", "In Progress"].sample }
     sequence(:user_id)
     sequence(:assignment_id)
-
-    factory :graded_assignment_with_contents_resources do
-      after(:create) { create(:assignment_with_contents) }
-    end
   end
 
   factory :content do

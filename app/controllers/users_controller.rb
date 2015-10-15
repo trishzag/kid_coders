@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_admin!, only: [:index]
 
   def index
     @users = User.all.page params[:page]
@@ -10,10 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if !current_user
-      flash[:alert] = 'You do not have permission to access this user page.'
-      redirect_to root_path
-    elsif current_user == User.find(params[:id])
+    if current_user == User.find(params[:id]) || current_user.admin?
       @user = current_user
       @curricula = @user.curricula
       @assignments = @user.assignments
