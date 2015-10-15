@@ -11,16 +11,15 @@
   </div>
   <% else %>
   <% @users.each do |user| %>
-    <div class="large-2 medium-4 small-6 columns">
+    <div class="large-4 medium-3 small-6 columns">
       <div class="panel text-center user-listing">
-        <ul>
-          <li><%= link_to user.username, user_path(user) %></li>
-          <li><%= user.email %></li>
-          <li>
-            <%= button_to 'Delete', user_path(user),
+        <div id="unstyled">
+          <ul>
+          <p> <%= link_to user.username, user_path(user) %> </p>
+          <p> <%= user.email %> </p>
+              <%= button_to 'Delete', user_path(user),
               method: :delete, id: "delete-#{user.id}", class: "tiny button" %>
-          </li>
-          <li>
+          <p>
             <% if user.admin? %>
               <%= button_to 'Remove Admin', admin_path(user),
                 method: :delete, id: "admin-#{user.id}", class: "alert tiny button" %>
@@ -28,8 +27,9 @@
               <%= button_to 'Make Admin', user_admin_index_path(user),
                 method: :post, id: "admin-#{user.id}", class: "secondary tiny button" %>
             <% end %>
-          </li>
+          </p>
         </ul>
+      </div>
       </div>
     </div>
   <% end %>
