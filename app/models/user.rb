@@ -35,9 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    if self.admin == true
-      return true
-    end
+    self.admin == true
   end
 
   attr_accessor :login
