@@ -1,5 +1,4 @@
 class AdminController < ApplicationController
-  before_action :authenticate_user!
 
   def create
     @user = User.find(params[:user_id])
@@ -15,18 +14,5 @@ class AdminController < ApplicationController
     @user.save
     flash[:success] = "#{@user.username} is no longer an admin."
     redirect_to users_path
-  end
-
-
-  private
-
-  def ensure_admin!
-    unless current_user.admin?
-      sign_out current_user
-
-      redirect_to root_path
-
-      return false
-    end
   end
 end
