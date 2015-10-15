@@ -17,6 +17,8 @@ feature 'Admin deletes a user', %{As an Admin
     visit users_path
 
     expect(page).to have_content("You must be an admin to access that page.")
+    expect(page).to have_content("Come learn to code")
+    expect(page).to have_content("View Curricula")
   end
 
   scenario 'user with admin privileges deletes another user' do
