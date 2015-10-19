@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
 
   it { should validate_presence_of(:assignment_complete) }
   it { should have_valid(:assignment_complete).when(0, 12, 3) }
-  it { should_not have_valid(:assignment_complete).when(-1, "", nil, "dog" ) }
+  it { should_not have_valid(:assignment_complete).when(-1, "", nil, "dog") }
 
   describe "#admin?" do
     it "is not an admin if admin is false " do
