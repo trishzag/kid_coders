@@ -2,7 +2,9 @@
 <ul class="accordion" data-accordion>
   <li class="accordion-navigation">
     <% @curricula.each do |curriculum| %>
+      <div id="curriculum-#{assignment.id}" class="content active">
       <a href="/curricula/<%= curriculum.id %>"><%= curriculum.name %></a>
+      </div>
     <% end %>
   </li>
 </ul>

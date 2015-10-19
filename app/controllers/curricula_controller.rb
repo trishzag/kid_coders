@@ -1,5 +1,6 @@
 class CurriculaController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :authorize_admin!, except: [:index, :show]
 
   def index
     @curricula = Curriculum.order(name: :asc)

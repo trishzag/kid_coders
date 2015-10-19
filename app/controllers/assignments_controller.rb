@@ -1,5 +1,6 @@
 class AssignmentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_admin!, except: [:show]
 
   def show
     @assignment = Assignment.find(params[:id])
