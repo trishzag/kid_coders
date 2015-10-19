@@ -4,8 +4,10 @@
   <li class="accordion-navigation">
     <% if @assignments.count > 0 %>
       <% @assignments.each do |assignment| %>
-        <a href="/assignments/<%= assignment.id %>"><%= assignment.title %></a>
+      <div id="assignment-#{assignment.id}" class="content active">
+      <%= link_to "#{assignment.title}", assignment_path(assignment) %>
       <% end %>
+      </div>
     <% end %>
   </li>
 </ul>
