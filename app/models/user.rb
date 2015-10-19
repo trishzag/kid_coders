@@ -16,7 +16,10 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 25 }
   validates :password, length: { in: 8..15 }, allow_blank: false
+  validates :assignment_complete, presence: true, numericality: true
+  validates :assignment_complete, :numericality => { :greater_than => -1 }
   validate :validate_username
+  validate :validate_email
 
   def email_required?
     false
@@ -57,6 +60,7 @@ class User < ActiveRecord::Base
         total += 1
       end
     end
+    @user.assignment_complete = total
   end
 
   protected
